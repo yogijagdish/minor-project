@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trek</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<header>
+<h1>
+Trek monitoring system
+</h1>
+</header>
+</body> 
+<nav>
+    <a href="{{link1}}">Home</a>
+    <a href="{{link2}}">Treks</a>
+    <a href="{{link3}}">guide</a>
+    <a href="{{link4}}">Current records</a>
+    <a href="{{link5}}">Contactus</a>
+</nav>
+<div class="trek">
+<div class="gallery">
+<a href="{{link6}}" target="blank">
+<img src="{% static 'images/trek/trekmardi.jpg' %}" alt="Abc" width="300px" height="200px">
+</a>
+<div class="desc">Mardi Trek <br>Altitude:4500m</div>
+</div>
+<div class="gallery">
+<a href="{{link6}}" target="blank">
+<img src="{% static 'images/trek/tilicho.jpg' %}" alt="Abc" width="300px" height="200px">
+</a>
+<div class="desc">Tilicho Trek<br>Altitude:5000m</div>
+</div>
+<div class="gallery">
+<a href="{{link8}}" target="blank">
+<img src="{% static 'images/trek/langtang.jpg' %}" alt="Abc" width="300px" height="200px">
+</a>
+<div class="desc">Lamtang Trek<br>Altitude:4700m</div>
+</div>
+</div>
+<footer>
+<p>Copyright &copy;2018 Akash Sunar</p>
+</footer>
+<body>
+</html>
+

@@ -1,0 +1,59 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+<title>trek monitoring system</title>
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<header>
+<h1>
+Trek monitoring system
+</h1>
+</header>
+
+
+
+<body>
+
+<nav>
+    <a href="{{link1}}">Home</a>
+    <a href="{{link2}}">Treks</a>
+    <a href="{{link3}}">guide</a>
+    <a href="{{link4}}">Current records</a>
+    <a href="{{link5}}">Contactus</a>
+</nav>
+<div class="contact">
+<h2>Contact us for booking</h2>
+<p><h3>For more information you can contact us</h3></p>
+<p><h3>9821574342</h3></p>
+</div>
+<div class="details">
+<form action="home.php">
+<label for="fname">Enter your name:</label>
+<input type="text" name="fname" id="fname" placeholder="enter your name">
+<label for="address">Current Address: </label>
+<input type="text" name="address" id="address" placeholder="enter your address">
+<label for="phnumber">Enter your phone number:</label>
+<input type="text" name="phnumber" id="phnumber"><br>
+<label for="fname">Trekking option:</label>
+<select id="Country">
+<option>Mardi</option>
+<option>Tilicho</option>
+<option>Lamtang</option>
+</select>
+<label for="subject">If you have used our service before then plz send us your feedback: </label>
+<textarea id="subject"></textarea>
+<input type="submit" value="Send booking">
+</form>
+</div>
+<footer>
+<p>Copyright &copy;2018 Akash Sunar</p>
+</footer>
+
+
+
+</body>
+</html>
