@@ -31,7 +31,7 @@ def langtang(request):
 
 def mardi(request):
     return render(request,'pages/trek/mardi.html',
-    {'data':api_mardi(request),'link1':'http://127.0.0.1:8000/',
+    {'link1':'http://127.0.0.1:8000/',
     'link2':'http://127.0.0.1:8000/frontend/trek',
     'link3':'http://127.0.0.1:8000/frontend/guide',
     'link4':'http://127.0.0.1:8000/frontend/curentrecord',
@@ -69,10 +69,3 @@ def curent_record(request):
     'link4':'http://127.0.0.1:8000/frontend/curentrecord',
     'link5':'http://127.0.0.1:8000/frontend/contactus'})
 
-def api_mardi(request):
-    api_address = 'http://api.openweathermap.org/data/2.5/weather?appid=f6f9191084e14cf1284f25289028d265&q='
-    city_name = 'mardi'
-    url = api_address+city_name
-    data = requests.get(url).json()
-    filter = data['weather']
-    return filter

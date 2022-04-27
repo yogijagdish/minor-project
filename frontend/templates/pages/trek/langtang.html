@@ -1,24 +1,26 @@
-[1:28 AM] AKASH SUNAR
+{%load static%}
 <!DOCTYPE html>
 <html>
 <head>
 <title>Lamgtang</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <header>
 <h1>
 Trek monitoring system
 </h1>
 </header>
-</body> <nav>
-<a href="home.html">Home</a>
-<a href="trek.html">Treks</a>
-<a href="guide.html">guide</a>
-<a href="currentrecords.html">Current records</a>
-<a href="contactus.html">Contactus</a>
+</body> 
+
+<nav>
+    <a href="{{link1}}">Home</a>
+    <a href="{{link2}}">Treks</a>
+    <a href="{{link3}}">guide</a>
+    <a href="{{link4}}">Current records</a>
+    <a href="{{link5}}">Contactus</a>
 </nav>
 <div class="limage">
-<img src="pic/llink.jpg" width="400px" height="400px">
+<img src="{% static 'images/mardi/mardi.jpg' %}" width="400px" height="400px">
 </div>
 <div class="lhead"><p><h2>TRIP OVERVIEW</h2>
 Langtang valley, located 61.8 km away from Kathmandu, amazes travelers with its mountain streams and stunning views. Mount Langtang Lirung (7246m) surrounds the rhododendron and pine forests that beautifies the valley. The warm hospitality and vibrant culture in the Langtang valley makes you feel like you are at home. The Langtang trek starts from Syabrubesi (1460m) and reaches the highest point at Kang Jing Gompa at an altitude of 3900m. You can also opt to trek Kang Jing Ri, a day from Kang Jing Gompa, to see the mesmerizing 360-degree views of the Himalayas. The trek offers a route that ascends and descends at several places with spectacular views of landscapes, painted chortens, Buddhist prayers flags and much more.
