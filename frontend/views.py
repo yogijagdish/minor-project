@@ -1,5 +1,6 @@
+from dataclasses import field
 from django.shortcuts import render
-from . models import climate, climate_langtang, climate_tilicho
+from . models import climate, climate_langtang, climate_tilicho,sensor_tempreture
 import mysql.connector
 import requests
 
@@ -70,6 +71,24 @@ def api_langtang():
     except:
         pass
 
+def api_tempreture():
+    try:
+        mydb = mysql.connector.connect(host="localhost",user="jagdish",passwd="Jagdish@1234",database="minor_project")
+        mycursor = mydb.cursor()
+        response = requests.get("https://api.thingspeak.com/channels/1713657/feeds.json?api_key=3KXUDFE6OJVR8JS4&results=5").json()
+
+        dist = response['feeds']
+        for i in range(5):
+            dist1 = dist[i]
+            created_at = dist1.get("created_at")
+            field = dist1.get("field1")
+            dist2 = [created_at,field]
+            query = "insert into frontend_sensor_tempreture values(%s,%s)"
+            mycursor.execute(query,dist2)
+            mydb.commit()
+    except:
+        pass
+
 
 def home(request):
     return render(request,'pages/home.html',
@@ -132,6 +151,7 @@ def guide(request):
     'link5':'http://127.0.0.1:8000/frontend/contactus'})
 
 def contact_us(request):
+    
     return render(request,'pages/contactus.html',
     {'link1':'http://127.0.0.1:8000/',
     'link2':'http://127.0.0.1:8000/frontend/trek',
@@ -140,10 +160,13 @@ def contact_us(request):
     'link5':'http://127.0.0.1:8000/frontend/contactus'})
 
 def curent_record(request):
+    api_tempreture()
+    sensor_tempreture1 = sensor_tempreture.objects.all()
     return render(request,'pages/curentrecord.html',
     {'link1':'http://127.0.0.1:8000/',
     'link2':'http://127.0.0.1:8000/frontend/trek',
     'link3':'http://127.0.0.1:8000/frontend/guide',
     'link4':'http://127.0.0.1:8000/frontend/curentrecord',
-    'link5':'http://127.0.0.1:8000/frontend/contactus'})
+    'link5':'http://127.0.0.1:8000/frontend/contactus',
+    'sensor_tempreture2':sensor_tempreture1})
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Current Records
+        </title>
+    </head>
+    <body>
+        <p> current Tempreture of the trekkers </p>
+        <table>
+            <tr>
+                <th> Time of Last measured</th>
+                <th> Tempreture of trekkers </th>
+            </tr>
+            {%for sensor_tempreture3 in sensor_tempreture2%}
+            <tr>
+                <td> {{sensor_tempreture3.created_at}}</td>
+                <td>{{sensor_tempreture3.field1}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+    </body>
+</html> 
