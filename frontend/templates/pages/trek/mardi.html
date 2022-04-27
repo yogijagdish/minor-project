@@ -116,68 +116,21 @@ personal injury or death. As a condition of booking you must accept these risks 
 <div class="tab3">
 <table>
 <tr>
-<th>Particular</th>
-<th> Value</th>
-
-
-
+<th>Weather</th>
+<th> Description</th>
+<th>Tempreture</th>
+<th> Minimum Tempreture</th>
+<th>Maximum Tempreture</th>
 </tr>
+{%for climate3 in climate2%}
 <tr>
-<td>Longitude</td>
-<td> {{data.id}}</td>
+<td> {{climate3.weather}}</td>
+<td>{{climate3.description}}</td>
+<td>{{climate3.temp}}</td>
+<td>{{climate3.temp_min}}</td>
+<td>{{climate3.temp_max}}</td>
 </tr>
-<tr>
-<td>Latitude</td>
-<td> </td>
-</tr>
-<tr>
-<td>Main</td>
-<td> </td>
-</tr>
-<tr>
-<td>Description</td>
-<td> </td>
-</tr>
-<tr>
-<td>Temp</td>
-<td> </td>
-</tr>
-<tr>
-<td>Max-Temp</td>
-<td> </td>
-</tr>
-<tr>
-<td>Min-Temp</td>
-<td> </td>
-</tr>
-<tr>
-<td>Pressure</td>
-<td> </td>
-</tr>
-<tr>
-<td>Humidity</td>
-<td> </td>
-</tr>
-<tr>
-<td>Sea-Level</td>
-<td> </td>
-</tr>
-<tr>
-<td>Ground-Level</td>
-<td> </td>
-</tr>
-<tr>
-<td>Visiblity</td>
-<td> </td>
-</tr>
-<tr>
-<td>Wind</td>
-<td> </td>
-</tr>
-
-
-
-
+{%endfor%}
 </table>
 
 
