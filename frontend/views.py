@@ -1,10 +1,11 @@
 from dataclasses import field
+from dis import dis
 from django.shortcuts import render
 from . models import climate, climate_langtang, climate_tilicho,sensor_tempreture
 import mysql.connector
 import requests
 
-# Create your views here.
+# Calling api to fetch data from databases.
 def api_mardi():
     try:
         mydb = mysql.connector.connect(host="localhost",user="jagdish",passwd="Jagdish@1234",database="minor_project")
@@ -75,19 +76,22 @@ def api_tempreture():
     try:
         mydb = mysql.connector.connect(host="localhost",user="jagdish",passwd="Jagdish@1234",database="minor_project")
         mycursor = mydb.cursor()
-        response = requests.get("https://api.thingspeak.com/channels/1713657/feeds.json?api_key=3KXUDFE6OJVR8JS4&results=5").json()
+        response = requests.get("https://api.thingspeak.com/channels/1722499/feeds.json?api_key=7QXFCH4NWJHK649Y&results=5").json()
 
         dist = response['feeds']
         for i in range(5):
             dist1 = dist[i]
             created_at = dist1.get("created_at")
-            field = dist1.get("field1")
-            dist2 = [created_at,field]
-            query = "insert into frontend_sensor_tempreture values(%s,%s)"
-            mycursor.execute(query,dist2)
+            field1 = dist1.get("field1")
+            field2 = dist1.get("field2")
+            dist1 = [created_at,field1,field2]
+            query1 = "insert into frontend_sensor_tempreture values(%s,%s,%s)"
+            mycursor.execute(query1,dist1)
             mydb.commit()
     except:
         pass
+
+# Rendering the webpages
 
 
 def home(request):
@@ -122,7 +126,7 @@ def langtang(request):
 
 def mardi(request):
     api_mardi()
-    climate1 = climate.objects.all()
+    climate1 = climate.objects.all().reverse()
     return render(request,'pages/trek/mardi.html',
     {'link1':'http://127.0.0.1:8000/',
     'link2':'http://127.0.0.1:8000/frontend/trek',
@@ -133,7 +137,7 @@ def mardi(request):
 
 def tilicho(request):
     api_tilicho()
-    climate_tilicho1 = climate_tilicho.objects.all()
+    climate_tilicho1 = climate_tilicho.objects.all().reverse()
     return render(request,'pages/trek/tilicho.html',
     {'link1':'http://127.0.0.1:8000/',
     'link2':'http://127.0.0.1:8000/frontend/trek',

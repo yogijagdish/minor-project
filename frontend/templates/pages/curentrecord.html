@@ -1,23 +1,50 @@
+{%load static%}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Current Records
-        </title>
-    </head>
-    <body>
-        <p> current Tempreture of the trekkers </p>
-        <table>
-            <tr>
-                <th> Time of Last measured</th>
-                <th> Tempreture of trekkers </th>
-            </tr>
-            {%for sensor_tempreture3 in sensor_tempreture2%}
-            <tr>
-                <td> {{sensor_tempreture3.created_at}}</td>
-                <td>{{sensor_tempreture3.field1}}</td>
-            </tr>
-            {%endfor%}
-        </table>
-    </body>
-</html> 
+<head>
+<title>trek monitoring system</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<header>
+<h1>
+Trek monitoring system
+</h1>
+<img src="{% static 'images/home/image1.jpg' %}">
+</header>
+
+
+
+<body>
+
+<nav>
+<a href="{{link1}}">Home</a>
+<a href="{{link2}}">Treks</a>
+<a href="{{link3}}">guide</a>
+<a href="{{link4}}">Current records</a>
+<a href="{{link5}}">Contactus</a>
+</nav>
+<p> current Tempreture of the trekkers </p>
+<table>
+    <tr>
+        <th> Time of Last measured</th>
+        <th> Tempreture of trekkers </th>
+        <th> Pulse of trekkers</th>
+    </tr>
+    {%for sensor_tempreture3 in sensor_tempreture2%}
+    <tr>
+        <td> {{sensor_tempreture3.created_at}}</td>
+        <td>{{sensor_tempreture3.field1}}</td>
+        <td>{{sensor_tempreture3.field2}}</td>
+    </tr>
+    {%endfor%}
+</table>
+
+<footer>
+<p>Copyright &copy;2018 Akash Sunar</p>
+</footer>
+
+
+
+</body>
+</html>

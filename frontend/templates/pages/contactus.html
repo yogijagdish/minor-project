@@ -1,23 +1,15 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-<title>trek monitoring system</title>
-
-
-
+<title>trek monitoring system</title> 
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <header>
 <h1>
 Trek monitoring system
 </h1>
-</header>
-
-
-
-<body>
-
+</header><body>
 <nav>
     <a href="{{link1}}">Home</a>
     <a href="{{link2}}">Treks</a>
@@ -25,35 +17,23 @@ Trek monitoring system
     <a href="{{link4}}">Current records</a>
     <a href="{{link5}}">Contactus</a>
 </nav>
-<div class="contact">
-<h2>Contact us for booking</h2>
-<p><h3>For more information you can contact us</h3></p>
-<p><h3>9821574342</h3></p>
+<div class="team">
+<img src="{% static 'images/About us/Team.jpg' %}" width="450x" height="450px">
 </div>
-<div class="details">
-<form action="home.php">
-<label for="fname">Enter your name:</label>
-<input type="text" name="fname" id="fname" placeholder="enter your name">
-<label for="address">Current Address: </label>
-<input type="text" name="address" id="address" placeholder="enter your address">
-<label for="phnumber">Enter your phone number:</label>
-<input type="text" name="phnumber" id="phnumber"><br>
-<label for="fname">Trekking option:</label>
-<select id="Country">
-<option>Mardi</option>
-<option>Tilicho</option>
-<option>Lamtang</option>
-</select>
-<label for="subject">If you have used our service before then plz send us your feedback: </label>
-<textarea id="subject"></textarea>
-<input type="submit" value="Send booking">
-</form>
+<div class="clsdet">
+<p>
+Trekker's health condition is an important factor to be monitored for efficient and worthy trekking.Our system checks pulse and body temperature and provide weather related data to guide and associated trekking company.<br>To ensure the fluent completion of the trek we have combinely developed a site whose features are:<br> <p>It will monitor the health condition of the trekkers.</p>
+<p>It will find,track and navigate the location of the trekkers.</p>
+<p>It will predict the weather conditions of the area and send data to main office.</p> This website is collaborative team effort intended to provide proper guidance for trekkers to their destination. This team includes four members who are well motivated and determined to provide any necessary information if required. Feel free to contact us.We'd love to hear from you!!!</p>
+</div> <div class="contact">
+<h2>GET IN TOUCH</h2>
+<p><h3>For more information you can contact as follow ::</h3></p> <h4>Email: poudelnawaraj9@gmail.com</h4>
+<h4>Address: Pokhara,Lamachaure-16</h4>
+<h4>Phone number : 9867767616 </h4>
+<h4> Fax no :061-4563</h4>
 </div>
 <footer>
-<p>Copyright &copy;2018 Akash Sunar</p>
-</footer>
-
-
-
-</body>
+<p>Copyright &copy;2022 Team-8848</p>
+</footer></body>
 </html>
+

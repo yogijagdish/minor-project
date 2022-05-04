@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import climate,climate_langtang,climate_tilicho,sensor_tempreture
 
-# Register your models here.
+# customizing the models
 
 class climateAdmin(admin.ModelAdmin):
     list_display = ['weather','description','temp','temp_min','temp_max']
@@ -13,6 +13,7 @@ class tempretureAdmin(admin.ModelAdmin):
     list_editable = ['created_at']
     list_per_page = 5
 
+# Register your models here.
 
 admin.site.register(climate,climateAdmin)
 admin.site.register(climate_tilicho,climateAdmin)
