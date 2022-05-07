@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import climate,climate_langtang,climate_tilicho,sensor_tempreture
+from .models import climate,climate_langtang,climate_tilicho,sensor_data
 
 # customizing the models
 
@@ -18,4 +18,4 @@ class tempretureAdmin(admin.ModelAdmin):
 admin.site.register(climate,climateAdmin)
 admin.site.register(climate_tilicho,climateAdmin)
 admin.site.register(climate_langtang,climateAdmin)
-admin.site.register(sensor_tempreture)
+admin.site.register(sensor_data)

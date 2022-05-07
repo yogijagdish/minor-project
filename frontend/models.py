@@ -32,8 +32,9 @@ class climate_langtang(models.Model):
     def __str__(self):
         return self.weather
 
-class sensor_tempreture(models.Model):
-    created_at = models.CharField(max_length=40,primary_key=True)
+class sensor_data(models.Model):
+    created_at = models.CharField(max_length=40)
+    entry = models.IntegerField(primary_key=True)
     field1 = models.DecimalField(max_digits=6,decimal_places=2)
     field2 = models.DecimalField(max_digits=6,decimal_places=2)
 

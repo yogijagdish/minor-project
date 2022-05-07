@@ -216,8 +216,12 @@ width:50%; }
 padding-left: 30vw;
  }
  table{
-     width: 100%;
+     width: 70%;
+     
  }
+.box{
+    padding-left: 25vw;
+}
 /*.clsdet{
 text-align: center;
 padding-left: 400px;
@@ -253,3 +257,8 @@ th, td {
     padding:20px;
     width: 100%;
   }
+  /* .social{
+      padding-left: 40px;
+      margin: 20px;;
+      word-spacing:35px;
+  } */

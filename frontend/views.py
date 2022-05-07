@@ -1,7 +1,7 @@
 from dataclasses import field
 from dis import dis
 from django.shortcuts import render
-from . models import climate, climate_langtang, climate_tilicho,sensor_tempreture
+from . models import climate, climate_langtang, climate_tilicho,sensor_data
 import mysql.connector
 import requests
 
@@ -82,10 +82,11 @@ def api_tempreture():
         for i in range(5):
             dist1 = dist[i]
             created_at = dist1.get("created_at")
+            entry = dist1.get('entry_id')
             field1 = dist1.get("field1")
             field2 = dist1.get("field2")
-            dist1 = [created_at,field1,field2]
-            query1 = "insert into frontend_sensor_tempreture values(%s,%s,%s)"
+            dist1 = [created_at,entry,field1,field2]
+            query1 = "insert into frontend_sensor_data values(%s,%s,%s,%s)"
             mycursor.execute(query1,dist1)
             mydb.commit()
     except:
@@ -141,7 +142,7 @@ def tilicho(request):
     return render(request,'pages/trek/tilicho.html',
     {'link1':'http://127.0.0.1:8000/',
     'link2':'http://127.0.0.1:8000/frontend/trek',
-    'link3':'http://127.0.0.1:8000/frontend/guide',
+   'link3':'htp://127.0.0.1:8000/frontend/guide',
     'link4':'http://127.0.0.1:8000/frontend/curentrecord',
     'link5':'http://127.0.0.1:8000/frontend/contactus',
     'climate_tilicho2':climate_tilicho1})
@@ -165,12 +166,13 @@ def contact_us(request):
 
 def curent_record(request):
     api_tempreture()
-    sensor_tempreture1 = sensor_tempreture.objects.all()
+    sensor_tempreture1 = sensor_data.objects.all()
     return render(request,'pages/curentrecord.html',
     {'link1':'http://127.0.0.1:8000/',
     'link2':'http://127.0.0.1:8000/frontend/trek',
     'link3':'http://127.0.0.1:8000/frontend/guide',
     'link4':'http://127.0.0.1:8000/frontend/curentrecord',
     'link5':'http://127.0.0.1:8000/frontend/contactus',
+    'link6' : '192.168.1.71',
     'sensor_tempreture2':sensor_tempreture1})
 

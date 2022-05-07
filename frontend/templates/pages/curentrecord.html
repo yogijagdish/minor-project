@@ -10,35 +10,49 @@
 <h1>
 Trek monitoring system
 </h1>
-<img src="{% static 'images/home/image1.jpg' %}">
+<!-- <img src="{% static 'images/home/image1.jpg' %}"> -->
 </header>
-
-
-
 <body>
 
 <nav>
 <a href="{{link1}}">Home</a>
 <a href="{{link2}}">Treks</a>
-<a href="{{link3}}">guide</a>
+<a href="{{link3}}">Guide</a>
 <a href="{{link4}}">Current records</a>
-<a href="{{link5}}">Contactus</a>
+<a href="{{link5}}">Contact us</a>
 </nav>
-<p> current Tempreture of the trekkers </p>
-<table>
-    <tr>
-        <th> Time of Last measured</th>
-        <th> Tempreture of trekkers </th>
-        <th> Pulse of trekkers</th>
-    </tr>
-    {%for sensor_tempreture3 in sensor_tempreture2%}
-    <tr>
-        <td> {{sensor_tempreture3.created_at}}</td>
-        <td>{{sensor_tempreture3.field1}}</td>
-        <td>{{sensor_tempreture3.field2}}</td>
-    </tr>
-    {%endfor%}
-</table>
+
+<h2 style="text-align: center;"> Search for Your Trekkers </h2>
+<div class="google" style="text-align: center;"> 
+<a href="http://192.168.1.71/">
+     <img src="{% static 'images/trek/map.jpeg' %}" height="100opx" width="100px"> 
+    </a>
+</div>
+
+<h2 style="text-align: center;">
+    
+    Current Tempreture of the trekkers
+</h2>
+<div class="box">
+
+    <table>
+        <tr>
+            <th> Time of Last measured</th>
+            <th> Tempreture of trekkers </th>
+            <th> Pulse of trekkers</th>
+        </tr>
+        {%for sensor_tempreture3 in sensor_tempreture2%}
+        <tr>
+            <td> {{sensor_tempreture3.created_at}}</td>
+            <td>{{sensor_tempreture3.field1}}</td>
+            <td>{{sensor_tempreture3.field2}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    
+</div>
+
+
 
 <footer>
 <p>Copyright &copy;2018 Akash Sunar</p>
