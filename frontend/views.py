@@ -8,7 +8,7 @@ import requests
 # Calling api to fetch data from databases.
 def api_mardi():
     try:
-        mydb = mysql.connector.connect(host="localhost",user="jagdish",passwd="Jagdish@1234",database="minor_project")
+        mydb = mysql.connector.connect(host="localhost",user="jagdish",passwd="Jagdish@1234",database="final_project")
         mycursor = mydb.cursor()
         response = requests.get("https://api.openweathermap.org/data/2.5/weather?q=mardi&appid=b44fcb0e2f09d3ef62d74f75f15c4820").json()
 
@@ -30,7 +30,7 @@ def api_mardi():
 
 def api_tilicho():
     try:
-        mydb = mysql.connector.connect(host="localhost",user="jagdish",passwd="Jagdish@1234",database="minor_project")
+        mydb = mysql.connector.connect(host="localhost",user="jagdish",passwd="Jagdish@1234",database="final_project")
         mycursor = mydb.cursor()
         response = requests.get("https://api.openweathermap.org/data/2.5/weather?q=manang&appid=b44fcb0e2f09d3ef62d74f75f15c4820").json()
 
@@ -52,7 +52,7 @@ def api_tilicho():
     
 def api_langtang():
     try:
-        mydb = mysql.connector.connect(host="localhost",user="jagdish",passwd="Jagdish@1234",database="minor_project")
+        mydb = mysql.connector.connect(host="localhost",user="jagdish",passwd="Jagdish@1234",database="final_project")
         mycursor = mydb.cursor()
         response = requests.get("https://api.openweathermap.org/data/2.5/weather?q=langtang&appid=b44fcb0e2f09d3ef62d74f75f15c4820").json()
 
@@ -74,7 +74,7 @@ def api_langtang():
 
 def api_tempreture():
     try:
-        mydb = mysql.connector.connect(host="localhost",user="jagdish",passwd="Jagdish@1234",database="minor_project")
+        mydb = mysql.connector.connect(host="localhost",user="jagdish",passwd="Jagdish@1234",database="final_project")
         mycursor = mydb.cursor()
         response = requests.get("https://api.thingspeak.com/channels/1722499/feeds.json?api_key=7QXFCH4NWJHK649Y&results=5").json()
 
@@ -164,10 +164,10 @@ def contact_us(request):
     'link4':'http://127.0.0.1:8000/frontend/curentrecord',
     'link5':'http://127.0.0.1:8000/frontend/contactus'})
 
-def curent_record(request):
+def trekker1(request):
     api_tempreture()
     sensor_tempreture1 = sensor_data.objects.all()
-    return render(request,'pages/curentrecord.html',
+    return render(request,'pages/current/trekker1.html',
     {'link1':'http://127.0.0.1:8000/',
     'link2':'http://127.0.0.1:8000/frontend/trek',
     'link3':'http://127.0.0.1:8000/frontend/guide',
@@ -175,4 +175,13 @@ def curent_record(request):
     'link5':'http://127.0.0.1:8000/frontend/contactus',
     'link6' : '192.168.1.71',
     'sensor_tempreture2':sensor_tempreture1})
+
+def curent_record(request):
+    return render(request,'pages/curentrecord.html', 
+    {'link1':'http://127.0.0.1:8000/',
+    'link2':'http://127.0.0.1:8000/frontend/trek',
+    'link3':'http://127.0.0.1:8000/frontend/guide',
+    'link4':'http://127.0.0.1:8000/frontend/curentrecord',
+    'link5':'http://127.0.0.1:8000/frontend/contactus',
+    'link6':'http://127.0.0.1:8000/frontend/current/trekker1'})
 

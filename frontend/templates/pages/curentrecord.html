@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>trek monitoring system</title>
+<title>current records</title>
+
+
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
@@ -10,52 +12,56 @@
 <h1>
 Trek monitoring system
 </h1>
-<!-- <img src="{% static 'images/home/image1.jpg' %}"> -->
 </header>
+
+
+
 <body>
 
 <nav>
-<a href="{{link1}}">Home</a>
-<a href="{{link2}}">Treks</a>
-<a href="{{link3}}">Guide</a>
-<a href="{{link4}}">Current records</a>
-<a href="{{link5}}">Contact us</a>
+    <a href="{{link1}}">Home</a>
+    <a href="{{link2}}">Treks</a>
+    <a href="{{link3}}">Guide</a>
+    <a href="{{link4}}">Current records</a>
+    <a href="{{link5}}">Contact us</a>
 </nav>
+<div class="trekker">
+<a href="{{link6}}" target="blank"><P>Trekker 1</P>
 
-<h2 style="text-align: center;"> Search for Your Trekkers </h2>
-<div class="google" style="text-align: center;"> 
-<a href="http://192.168.1.71/">
-     <img src="{% static 'images/trek/map.jpeg' %}" height="100opx" width="100px"> 
-    </a>
+</a>
+
+</div>
+<div class="trek">
+<div class="trekker">
+
+<a href="{{link6}}" target="blank"><P>Trekker 2</P>
+
+</a>
+
+</div>
+<div class="trekker">
+
+<a href="{{link6}}" target="blank"><P>Trekker 3</P>
+
+</a>
+
+</div>
+<div class="trekker">
+
+<a href="link6" target="blank"><P>Trekker 4</P>
+
+</a>
+
+</div>
 </div>
 
-<h2 style="text-align: center;">
-    
-    Current Tempreture of the trekkers
-</h2>
-<div class="box">
 
-    <table>
-        <tr>
-            <th> Time of Last measured</th>
-            <th> Tempreture of trekkers </th>
-            <th> Pulse of trekkers</th>
-        </tr>
-        {%for sensor_tempreture3 in sensor_tempreture2%}
-        <tr>
-            <td> {{sensor_tempreture3.created_at}}</td>
-            <td>{{sensor_tempreture3.field1}}</td>
-            <td>{{sensor_tempreture3.field2}}</td>
-        </tr>
-        {%endfor%}
-    </table>
-    
-</div>
+
 
 
 
 <footer>
-<p>Copyright &copy;2018 Akash Sunar</p>
+<p>Copyright &copy;2022 Team-8848</p>
 </footer>
 
 

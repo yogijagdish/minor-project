@@ -9,6 +9,7 @@ urlpatterns = [
     path('curentrecord',views.curent_record),
     path('trek/tilicho',views.tilicho),
     path('trek/langtang',views.langtang),
-    path('trek/mardi',views.mardi)
+    path('trek/mardi',views.mardi),
+    path('current/trekker1',views.trekker1)
 
 ]

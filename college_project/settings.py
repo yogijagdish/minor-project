@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'college_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'minor_project',
+        'NAME': 'final_project',
         'USER': 'jagdish',
         'PASSWORD': 'Jagdish@1234',
         'HOST': 'localhost',
